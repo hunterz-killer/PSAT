@@ -36,3 +36,75 @@ PSAT Solved Programs List
 |	30	|	https://codeforces.com/problemset/problem/1511/A	|	Review	|	[Solution](https://codeforces.com/contest/1511/submission/145365929) |
 |	31	|	https://codeforces.com/problemset/problem/1512/A	|	Spy	|	[Solution](https://codeforces.com/contest/1512/submission/145366372) |
 |	32	|	https://codeforces.com/problemset/problem/1593/A	|	Elections	|	[Solution](https://codeforces.com/contest/1593/submission/137310106) |
+
+# Mock Exam Solutions
+
+The Winner
+
+```
+for _ in range(int(input())):
+    a, b = map(int, input().split())
+    if a>b:
+        print("A", a-b)
+    else:
+        print("B", b-a)
+```
+Odd Divisible
+
+```
+n, k = map(int, input().split())
+res = 0
+for i in range(k,n,k):
+    if i%2!=0:
+        res+=1
+        
+print(res)
+```
+
+Increasing Digits 
+
+```
+ui = int(input())
+if len(str(ui))==1:
+    print("YES")
+
+elif str(ui).count(str(ui)[0]) != len(str(ui)):
+    req = list(map(str, str(ui).strip()))
+    req.sort(reverse=True)
+
+
+    req = "".join(req)
+
+    if str(ui) == req:
+        print("YES")
+    else:
+        print("NO")
+else:
+    print("NO")
+```
+
+Strange Grid Again
+
+```
+def strangeGrid(r, c):
+    d,m = divmod(r-1,2)
+    a = d*10+2*c
+    a -= 1 if m else 2
+    return a
+
+r,c = map(int,input().split())
+print(strangeGrid(r, c))
+```
+
+Palindrome
+
+```
+a , b = map(str, input().split())
+r_b = b[::-1]
+res = "YES"
+for x in range(min(len(a), len(b))):
+    if a[x]!=r_b[x]:
+        res = "NO"
+        break
+print(res)
+```
